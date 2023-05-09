@@ -1,37 +1,24 @@
-import React, { useReducer } from 'react'
-import { Sub } from './types';
+import { Sub, SubActions } from './types';
 
-const INITIAL_STATE = [ {
-    nick: "Juancito",
-    avatar: "https://i.pravatar.cc/150?u=juancito",
-    submonths: 5,
-    description: ""
-  },
-  {
-    nick: "caro",
-    avatar: "https://i.pravatar.cc/150?u=caro",
-    submonths: 7,
-    description: "hermana mayor"
-  },
-  {
-    nick: "almiron",
-    avatar: "https://i.pravatar.cc/150?u=almiron",
-    submonths: 2,
-    description: "soy de la boca, y ya vamos a mostrar"
-  }]
 
-  
-const subReducer = (state:Array<Sub>, action:any):Array<Sub> => {
-    switch (action.type) {
-        case 'create':
-            return state
-        case 'delete':
-            return state
-        default:
-            return state;
-    }
+const INITIAL_STATE = {
+  nick: "",
+  submonths: 0,
+  avatar: "",
+  description: ""
+}
+
+const subReducer = (state: Sub, action: SubActions) => {
+
+  switch (action.type) {
+    case 'change':
+      const {inputName, inputValue} = action.payload
+      return { ...state, [inputName]: inputValue}
+    case 'clear':
+      return INITIAL_STATE
+    default:
+      return INITIAL_STATE;
+  }
 }
 
 export default subReducer
-
-const [subs subsDispatcher] = useReducer(subReducer, INITIAL_STATE)

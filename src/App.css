@@ -10,9 +10,11 @@
   padding: 1.5em;
   will-change: filter;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -21,6 +23,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -40,15 +43,16 @@
   color: #888;
 }
 
-.sub_list {  
-  display: flex;  
+.sub_list {
+  display: flex;
+  align-items: center;
   gap: 10px;
   padding: 0px;
   flex-direction: column;
   /* background-color: #e5dada;     */
 }
 
-.sub_card {  
+.sub_card {
   padding-top: 10px;
   list-style: none;
   border: 1px solid rgba(189, 68, 68, 0.379);
@@ -66,5 +70,5 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
+
 }

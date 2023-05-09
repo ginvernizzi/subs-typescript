@@ -5,3 +5,21 @@ export interface Sub
     submonths: number
     description?: string
 }
+
+export type SubActions = {
+        payload: {
+            inputName: string,
+            inputValue: string
+        },
+        type: 'change',
+} | {
+    type: 'clear',
+}
+
+export interface SubApi
+{
+    nick: string
+    profileUrl: string
+    months: number
+    description?: string
+}
